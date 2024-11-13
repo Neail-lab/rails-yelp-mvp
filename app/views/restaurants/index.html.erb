@@ -1,13 +1,21 @@
 <div class="container text-center">
   <h1>Voici nos magnifique restaurants !</h1>
   <div class="d-flex flex-wrap">
+        <div class="card m-1" style="width: 18rem;">
+        <img class="card-img-top" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWVkMWxrcnNidDU0ZG40aWVkcWFsdmk5ZzlrdmVkZTFyYmxia2VyeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/RLJrfLPa5jD2FoWrOO/giphy.webp" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Ton restaurant, ici !</h5>
+          <p class="card-text">Click sur le bouton pour crée ton restaurant magique et spectacular.</p>
+          <%= link_to "Click ici !", new_restaurant_path(), class:"btn btn-primary button" %></a>
+        </div>
+      </div>
     <% @restaurants.each do |r| %>
       <div class="card m-1" style="width: 18rem;">
         <img class="card-img-top" src=<%= r.image_url %> alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title"><%= r.name %></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <p class="card-text"><%= r.description %></p>
+          <%= link_to "Infos", restaurant_path(r), class:"btn btn-primary button" %></a>
         </div>
       </div>
     <% end %>

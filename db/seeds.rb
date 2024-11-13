@@ -15,10 +15,10 @@ puts "Création des réstaurants !"
 
 
 
-10.times do
+5.times do
   img = Faker::LoremFlickr.image
   cat = ["chinese", "italian", "japanese", "french", "belgian"].sample
-  Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.phone_number_with_country_code, category: cat, image_url: img)
+  Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.phone_number_with_country_code, category: cat, image_url: img, description: Faker::Fantasy::Tolkien.poem)
 end
 
 puts "Finished! Created #{Restaurant.count} restaurants."

@@ -1,0 +1,11 @@
+<div class="container p-5 d-flex">
+<%= simple_form_for(@restaurant) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :phone_number %>
+  <%= f.input :image_url %>
+  <%= f.input :category, collection: Restaurant::CAT %>
+  <%= f.submit class:"btn btn-primary button" %>
+<% end %>
+</div>
