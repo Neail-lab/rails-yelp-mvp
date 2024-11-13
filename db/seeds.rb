@@ -7,3 +7,18 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Suppresion des restaurants !"
+
+Restaurant.delete_all
+
+puts "Création des réstaurants !"
+
+
+
+10.times do
+  img = Faker::LoremFlickr.image
+  cat = ["chinese", "italian", "japanese", "french", "belgian"].sample
+  Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.phone_number_with_country_code, category: cat, image_url: img)
+end
+
+puts "Finished! Created #{Restaurant.count} restaurants."
